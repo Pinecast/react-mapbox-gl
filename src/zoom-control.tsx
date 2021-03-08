@@ -69,7 +69,7 @@ export interface State {
 
 export class ZoomControl extends React.Component<Props, State> {
   public static defaultProps = {
-    position: POSITIONS[0],
+    position: POSITIONS[0] as AnchorLimits,
     zoomDiff: 0.5,
     onControlClick: (map: Map, zoomDiff: number) => {
       map.zoomTo(map.getZoom() + zoomDiff);

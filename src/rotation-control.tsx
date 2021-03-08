@@ -74,7 +74,7 @@ export interface State {
 
 export class RotationControl extends React.Component<Props, State> {
   public static defaultProps = {
-    position: POSITIONS[0]
+    position: POSITIONS[0] as AnchorLimits
   };
 
   public state = {
