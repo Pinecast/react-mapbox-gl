@@ -71,7 +71,7 @@ describe('cluster', () => {
 
     const call = clusterMarkerFactory.mock.calls[0];
     // coordinates
-    expect(call[0]).toEqual([-9.11968680123703, 40.047086577057655]);
+    expect(call[0]).toEqual([-9.119682312011719, 40.047082252642724]);
     // pointCount
     expect(call[1]).toEqual(2);
     // getLeaves

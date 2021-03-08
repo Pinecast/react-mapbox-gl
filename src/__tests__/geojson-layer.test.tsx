@@ -1,10 +1,11 @@
+import { FeatureCollection } from 'geojson';
 import * as React from 'react';
 import GeoJSONLayer from '../geojson-layer';
 import { getMapMock, mountWithMap } from '../jest/util';
 
 describe('GeoJSONLayer', () => {
   const fillPaint = { 'fill-color': '#001122' };
-  const data = { type: 'FeatureCollection', features: [] };
+  const data = { type: 'FeatureCollection', features: [] } as FeatureCollection;
 
   it('Should call addLayer with provided layerOptions', () => {
     const mapMock = getMapMock();
@@ -19,7 +20,7 @@ describe('GeoJSONLayer', () => {
 
     mountWithMap(GeoJSONLayerComp, mapMock);
 
-    const addFillLayerCall = mapMock.addLayer.mock.calls.find(([call]) =>
+    const addFillLayerCall = mapMock.addLayer.mock.calls.find(([call]: any) =>
       call.id.endsWith('-fill')
     );
 
@@ -42,7 +43,7 @@ describe('GeoJSONLayer', () => {
 
     mountWithMap(GeoJSONLayerComp, mapMock);
 
-    const addFillLayerCall = mapMock.addLayer.mock.calls.find(([call]) =>
+    const addFillLayerCall = mapMock.addLayer.mock.calls.find(([call]: any) =>
       call.id.endsWith('-fill')
     );
 

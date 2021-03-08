@@ -5,6 +5,8 @@ import * as MapboxGl from 'mapbox-gl';
 
 // tslint:disable-next-line:no-any
 export const getMapMock = (override?: { [key: string]: any }) => ({
+  addControl: jest.fn(),
+  removeControl: jest.fn(),
   addSource: jest.fn(),
   removeSource: jest.fn(),
   addLayer: jest.fn(),
@@ -15,11 +17,24 @@ export const getMapMock = (override?: { [key: string]: any }) => ({
   addImage: jest.fn(),
   loadImage: jest.fn(),
   removeImage: jest.fn(),
+  resize: jest.fn(),
+  getBounds: jest.fn(),
+  getMaxBounds: jest.fn(),
+  setMaxBounds: jest.fn(),
+  getMinZoom: jest.fn(),
+  setMinZoom: jest.fn(),
+  getMaxZoom: jest.fn(),
+  setMaxZoom: jest.fn(),
+  getMinPitch: jest.fn(),
+  setMinPitch: jest.fn(),
+  getMaxPitch: jest.fn(),
+  setMaxPitch: jest.fn(),
   hasImage: jest.fn(),
   getSource: jest.fn().mockReturnValue({ setData: jest.fn() }),
   project: jest.fn(),
+  unproject: jest.fn(),
   ...override
-});
+} as any);
 
 // tslint:disable-next-line:no-any
 export const mountWithMap = (comp: JSX.Element, mapValue: any) => {
