@@ -74,7 +74,6 @@ export type RequestTransformFunction = (
 
 // Static Properties of the map
 export interface FactoryParameters {
-  accessToken: string;
   apiUrl?: string;
   minZoom?: number;
   maxZoom?: number;
@@ -118,7 +117,6 @@ declare global {
 }
 
 const ReactMapboxFactory = ({
-  accessToken,
   apiUrl,
   minZoom = 0,
   maxZoom = 20,
@@ -189,8 +187,6 @@ const ReactMapboxFactory = ({
         maxBounds
       } = this.props;
 
-      // tslint:disable-next-line:no-any
-      (MapboxGl as any).accessToken = accessToken;
       if (apiUrl) {
         // tslint:disable-next-line:no-any
         (MapboxGl as any).config.API_URL = apiUrl;

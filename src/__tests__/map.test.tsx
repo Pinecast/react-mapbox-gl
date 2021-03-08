@@ -31,7 +31,6 @@ describe('Map', () => {
 
   it('Should render the map correctly', () => {
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock() as any
     });
     mount(<MapboxMap style="" />);
@@ -41,7 +40,6 @@ describe('Map', () => {
     const fitBoundsValues: FitBounds = [[0, 1], [2, 3]];
     const fitBoundsOptions = { linear: true };
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock() as any
     });
 
@@ -65,7 +63,6 @@ describe('Map', () => {
     const newFitBoundsOptions = { offset: [0, 0] };
 
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock({
         flyTo,
         fitBounds: mockfitBounds
@@ -88,7 +85,7 @@ describe('Map', () => {
   it.skip('Should calc the center from fitbounds if center is not given', () => {
     const fitBoundsValues: FitBounds = [[0, 3], [2, 9]];
     const mockMap = getMock() as any;
-    const MapboxMap = ReactMapboxGl({ accessToken: '', mapInstance: mockMap });
+    const MapboxMap = ReactMapboxGl({ mapInstance: mockMap });
 
     mount(<MapboxMap style="" fitBounds={fitBoundsValues} />);
 
@@ -99,7 +96,6 @@ describe('Map', () => {
 
   it('Should listen onStyleLoad event', () => {
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock() as any
     });
 
@@ -112,7 +108,6 @@ describe('Map', () => {
     const flyTo = jest.fn();
     const center = [3, 4];
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock({
         flyTo
       }) as any
@@ -131,7 +126,6 @@ describe('Map', () => {
     const mockMaxBounds = jest.fn();
 
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock({
         setMaxBounds: mockMaxBounds,
         flyTo
@@ -148,7 +142,6 @@ describe('Map', () => {
   it('Should not update zoom when using same reference equality', () => {
     const flyTo = jest.fn();
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock({
         flyTo
       }) as any
@@ -166,7 +159,6 @@ describe('Map', () => {
   it('Should update the zoom on broken reference equality', () => {
     const flyTo = jest.fn();
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock({
         flyTo
       }) as any
@@ -183,7 +175,6 @@ describe('Map', () => {
   it('Should not update bearing when using same reference equality', () => {
     const flyTo = jest.fn();
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock({
         flyTo
       }) as any
@@ -200,7 +191,6 @@ describe('Map', () => {
   it('Should update the bearing on broken reference equality', () => {
     const flyTo = jest.fn();
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock({
         flyTo
       }) as any
@@ -217,7 +207,6 @@ describe('Map', () => {
   it('Should not update pitch when using same reference equality', () => {
     const flyTo = jest.fn();
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock({
         flyTo
       }) as any
@@ -234,7 +223,6 @@ describe('Map', () => {
   it('Should update the pitch on broken reference equality', () => {
     const flyTo = jest.fn();
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock({
         flyTo
       }) as any
@@ -250,7 +238,6 @@ describe('Map', () => {
   it('Should pass animation options and flyTo options', () => {
     const flyTo = jest.fn();
     const MapboxMap = ReactMapboxGl({
-      accessToken: '',
       mapInstance: getMock({
         flyTo
       }) as any
